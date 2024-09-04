@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
     s.compiler_flags         = folly_compiler_flags + ' ' + boost_compiler_flags
     s.pod_target_xcconfig    = { "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/boost\" \"$(PODS_ROOT)/RCT-Folly\" \"$(PODS_ROOT)/DoubleConversion\" \"$(PODS_ROOT)/fmt/include\" \"$(PODS_ROOT)/Headers/Private/React-Core\" \"${PODS_CONFIGURATION_BUILD_DIR}/React-jsinspector/jsinspector_modern.framework/Headers\"",
                                 "USE_HEADERMAP" => "YES",
-                                "CLANG_CXX_LANGUAGE_STANDARD" => rct_cxx_language_standard(),
+                                "CLANG_CXX_LANGUAGE_STANDARD" => "c++20",
                                 "GCC_WARN_PEDANTIC" => "YES" }
 
     s.source_files = "#{source_path}/ReactCommon/**/*.{mm,cpp,h}"

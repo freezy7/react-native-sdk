@@ -44,15 +44,15 @@ Pod::Spec.new do |s|
 
     ss.subspec "bridging" do |sss|
       sss.dependency           "React-jsi", version
-      sss.source_files         = "#{source_files}/react/bridging/**/*.{cpp,h}"
-      sss.exclude_files        = "#{source_files}/react/bridging/tests"
+      sss.source_files         = "#{source_path}/react/bridging/**/*.{cpp,h}"
+      sss.exclude_files        = "#{source_path}/react/bridging/tests"
       sss.header_dir           = "react/bridging"
       sss.pod_target_xcconfig  = { "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/ReactCommon\" \"$(PODS_ROOT)/RCT-Folly\"" }
       sss.dependency "hermes-engine"
     end
 
     ss.subspec "core" do |sss|
-      sss.source_files = "#{source_files}/react/nativemodule/core/ReactCommon/**/*.{cpp,h}"
+      sss.source_files = "#{source_path}/react/nativemodule/core/ReactCommon/**/*.{cpp,h}"
       sss.pod_target_xcconfig  = { "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/ReactCommon\" \"$(PODS_CONFIGURATION_BUILD_DIR)/React-debug/React_debug.framework/Headers\" \"$(PODS_CONFIGURATION_BUILD_DIR)/React-utils/React_utils.framework/Headers\"" }
       sss.dependency "React-debug", version
       sss.dependency "React-utils", version

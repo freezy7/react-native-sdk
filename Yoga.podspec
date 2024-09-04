@@ -18,8 +18,8 @@ Pod::Spec.new do |spec|
   spec.description = 'Yoga is a cross-platform layout engine enabling maximum collaboration within your team by implementing an API many designers are familiar with, and opening it up to developers across different platforms.'
 
   spec.authors = 'Facebook'
-  s.platforms  = { :ios => '13.4' }
-  s.source     = { :git => 'https://github.com/freezy7/react-native-sdk.git', :tag => "v#{s.version}" }
+  spec.platforms  = { :ios => '13.4' }
+  spec.source     = { :git => 'https://github.com/freezy7/react-native-sdk.git', :tag => "v#{spec.version}" }
 
   spec.module_name = 'yoga'
   spec.header_dir = 'yoga'
