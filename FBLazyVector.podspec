@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.license                = 'MIT'
   s.author                 = "Meta Platforms, Inc. and its affiliates"
   s.platforms              = { :ios => '13.4' }
-  s.source                 = { :git => 'https://github.com/freezy7/react-native-sdk.git', :tag => "v#{s.version}" }
+  s.source                 = { :http => "https://github.com/freezy7/react-native-sdk/releases/download/#{s.version}/FBLazyVector.zip" }
   s.source_files           = "node_modules/react-native/Libraries/FBLazyVector/**/*.{c,h,m,mm,cpp}"
   s.header_dir             = "FBLazyVector"
   s.libraries = "c++"
