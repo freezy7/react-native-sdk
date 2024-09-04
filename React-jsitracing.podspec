@@ -15,10 +15,10 @@ Pod::Spec.new do |s|
   s.version                = version
   s.summary                = "Internal library for JSI debugging."
   s.homepage               = "https://reactnative.dev/"
-  s.license                = package["license"]
+  s.license                = 'MIT'
   s.author                 = "Meta Platforms, Inc. and its affiliates"
-  s.platforms              = min_supported_versions
-  s.source                 = source
+  s.platforms              = { :ios => '13.4' }
+  s.source                 = { :git => 'https://github.com/freezy7/react-native-sdk.git', :tag => "v#{s.version}" }
   s.source_files           = "#{source_path}/JSITracing.{cpp,h}"
   s.header_dir             = "."
   s.pod_target_xcconfig    = { "HEADER_SEARCH_PATHS" => "\"${PODS_ROOT}/\"",

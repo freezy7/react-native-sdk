@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.license                = 'MIT'
   s.author                 = "Meta Platforms, Inc. and its affiliates"
   s.platforms              = { :ios => '13.4' }
-  s.source                 = { :git => 'https://github.com/freezy7/react-native-sdk.git', :tag => "v#{spec.version}" }
+  s.source                 = { :git => 'https://github.com/freezy7/react-native-sdk.git', :tag => "v#{s.version}" }
   s.source_files           = "#{source_path}/*.{cpp,h}", "#{source_path}/nativeviewconfig/*.{cpp,h}"
   s.exclude_files          = "#{source_path}/iostests/*", "#{source_path}/tests/**/*.{cpp,h}"
   s.header_dir             = "react/runtime"

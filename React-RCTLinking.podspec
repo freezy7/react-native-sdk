@@ -30,7 +30,7 @@ Pod::Spec.new do |s|
   s.license                = 'MIT'
   s.author                 = "Meta Platforms, Inc. and its affiliates"
   s.platforms              = { :ios => '13.4' }
-  s.source                 = { :git => 'https://github.com/freezy7/react-native-sdk.git', :tag => "v#{spec.version}" }
+  s.source                 = { :git => 'https://github.com/freezy7/react-native-sdk.git', :tag => "v#{s.version}" }
   s.compiler_flags         = folly_compiler_flags + ' -Wno-nullability-completeness'
   s.source_files           = "#{source_path}/*.{m,mm}"
   s.header_dir             = "RCTLinking"

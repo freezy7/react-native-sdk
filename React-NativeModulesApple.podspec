@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
     s.license                = 'MIT'
     s.author                 = "Meta Platforms, Inc. and its affiliates"
     s.platforms              = { :ios => '13.4' }
-    s.source                 = { :git => 'https://github.com/freezy7/react-native-sdk.git', :tag => "v#{spec.version}" }
+    s.source                 = { :git => 'https://github.com/freezy7/react-native-sdk.git', :tag => "v#{s.version}" }
     s.compiler_flags         = folly_compiler_flags + ' ' + boost_compiler_flags
     s.pod_target_xcconfig    = { "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/boost\" \"$(PODS_ROOT)/RCT-Folly\" \"$(PODS_ROOT)/DoubleConversion\" \"$(PODS_ROOT)/fmt/include\" \"$(PODS_ROOT)/Headers/Private/React-Core\" \"${PODS_CONFIGURATION_BUILD_DIR}/React-jsinspector/jsinspector_modern.framework/Headers\"",
                                 "USE_HEADERMAP" => "YES",

@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.license                = 'MIT'
   s.author                 = "Meta Platforms, Inc. and its affiliates"
   s.platforms              = { :ios => '13.4' }
-  s.source                 = { :git => 'https://github.com/freezy7/react-native-sdk.git', :tag => "v#{spec.version}" }
+  s.source                 = { :git => 'https://github.com/freezy7/react-native-sdk.git', :tag => "v#{s.version}" }
   s.source_files           = "#{source_path}/executor/*.{cpp,h}",
                              "#{source_path}/inspector-modern/chrome/*.{cpp,h}",
   s.public_header_files    = "#{source_path}/executor/HermesExecutorFactory.h"

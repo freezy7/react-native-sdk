@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
     s.license                = 'MIT'
     s.homepage               = "https://reactnative.dev/"
     s.platforms              = { :ios => '13.4' }
-    s.source                 = { :git => 'https://github.com/freezy7/react-native-sdk.git', :tag => "v#{spec.version}" }
+    s.source                 = { :git => 'https://github.com/freezy7/react-native-sdk.git', :tag => "v#{s.version}" }
     s.summary                = "Macros for marking APIs as deprecated"
     s.source_files           = [
       "node_modules/react-native/ReactApple/Libraries/RCTFoundation/RCTDeprecation/Exported/*.h", 

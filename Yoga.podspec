@@ -19,7 +19,7 @@ Pod::Spec.new do |spec|
 
   spec.authors = 'Facebook'
   s.platforms  = { :ios => '13.4' }
-  s.source     = { :git => 'https://github.com/freezy7/react-native-sdk.git', :tag => "v#{spec.version}" }
+  s.source     = { :git => 'https://github.com/freezy7/react-native-sdk.git', :tag => "v#{s.version}" }
 
   spec.module_name = 'yoga'
   spec.header_dir = 'yoga'
