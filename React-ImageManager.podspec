@@ -34,7 +34,7 @@ Pod::Spec.new do |s|
   s.license                = 'MIT'
   s.author                 = "Meta Platforms, Inc. and its affiliates"
   s.platforms              = { :ios => '13.4' }
-  s.source                 = { :git => 'https://github.com/freezy7/react-native-sdk.git', :tag => "v#{s.version}" }
+  s.source                 = { :http => "https://github.com/freezy7/react-native-sdk/releases/download/v#{s.version}/React-ImageManager.zip" }
   s.compiler_flags         = folly_compiler_flags + ' ' + boost_compiler_flags
   s.source_files           = source_files
   s.header_dir             = "react/renderer/imagemanager"

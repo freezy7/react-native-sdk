@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.license                = 'MIT'
   s.author                 = "Meta Platforms, Inc. and its affiliates"
   s.platforms              = { :ios => '13.4' }
-  s.source                 = { :git => 'https://github.com/freezy7/react-native-sdk.git', :tag => "v#{s.version}" }
+  s.source                 = { :http => "https://github.com/freezy7/react-native-sdk/releases/download/v#{s.version}/React-featureflags.zip" }
   s.source_files           = "#{source_path}/*.{cpp,h}"
   s.header_dir             = "react/featureflags"
   s.libraries = "c++"

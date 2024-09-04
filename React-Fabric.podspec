@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.license                = 'MIT'
   s.author                 = "Meta Platforms, Inc. and its affiliates"
   s.platforms              = { :ios => '13.4' }
-  s.source                 = { :git => 'https://github.com/freezy7/react-native-sdk.git', :tag => "v#{s.version}" }
+  s.source                 = { :http => "https://github.com/freezy7/react-native-sdk/releases/download/v#{s.version}/React-Fabric.zip" }
   s.source_files           = "#{source_path}/dummyFile.cpp"
   s.pod_target_xcconfig = { "USE_HEADERMAP" => "YES",
                             "HEADER_SEARCH_PATHS" => "\"${PODS_CONFIGURATION_BUILD_DIR}/React-rendererdebug/React_rendererdebug.framework/Headers\" \"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers\" \"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers/react/renderer/graphics/platform/ios\"",

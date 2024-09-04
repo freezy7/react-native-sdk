@@ -50,7 +50,7 @@ Pod::Spec.new do |s|
   s.license                = 'MIT'
   s.author                 = "Meta Platforms, Inc. and its affiliates"
   s.platforms              = { :ios => '13.4' }
-  s.source                 = { :git => 'https://github.com/freezy7/react-native-sdk.git', :tag => "v#{s.version}" }
+  s.source                 = { :http => "https://github.com/freezy7/react-native-sdk/releases/download/v#{s.version}/React-RCTFabric.zip" }
   s.source_files           = "#{source_path}/Fabric/**/*.{c,h,m,mm,S,cpp}"
   s.exclude_files          = "#{source_path}/**/tests/*",
                              "#{source_path}/**/android/*",

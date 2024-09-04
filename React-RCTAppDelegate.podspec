@@ -53,7 +53,7 @@ Pod::Spec.new do |s|
   s.license                = 'MIT'
   s.author                 = "Meta Platforms, Inc. and its affiliates"
   s.platforms              = { :ios => '13.4' }
-  s.source                 = { :git => 'https://github.com/freezy7/react-native-sdk.git', :tag => "v#{s.version}" }
+  s.source                 = { :http => "https://github.com/freezy7/react-native-sdk/releases/download/v#{s.version}/React-RCTAppDelegate.zip" }
   s.source_files            = "#{source_path}/**/*.{c,h,m,mm,S,cpp}"
 
   # This guard prevent to install the dependencies when we run `pod install` in the old architecture.

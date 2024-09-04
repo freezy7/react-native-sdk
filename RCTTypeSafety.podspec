@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.license                = 'MIT'
   s.author                 = "Meta Platforms, Inc. and its affiliates"
   s.platforms              = { :ios => '13.4' }
-  s.source                 = { :git => 'https://github.com/freezy7/react-native-sdk.git', :tag => "v#{s.version}" }
+  s.source                 = { :http => "https://github.com/freezy7/react-native-sdk/releases/download/v#{s.version}/RCTTypeSafety.zip" }
   s.source_files           = "#{source_path}/**/*.{c,h,m,mm,cpp}"
   s.header_dir             = "RCTTypeSafety"
   s.pod_target_xcconfig    = {

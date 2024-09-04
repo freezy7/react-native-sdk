@@ -13,7 +13,7 @@ source_path = 'node_modules/react-native/React/CoreModules'
 
 header_search_paths = [
   "\"$(PODS_ROOT)/boost\"",
-  "\"$(PODS_TARGET_SRCROOT)/React/CoreModules\"",
+  "\"$(PODS_ROOT)/React-CoreModules\"",
   "\"$(PODS_ROOT)/RCT-Folly\"",
   "\"$(PODS_ROOT)/DoubleConversion\"",
   "\"$(PODS_ROOT)/fmt/include\"",
@@ -35,7 +35,7 @@ Pod::Spec.new do |s|
   s.license                = 'MIT'
   s.author                 = "Meta Platforms, Inc. and its affiliates"
   s.platforms              = { :ios => '13.4' }
-  s.source                 = { :git => 'https://github.com/freezy7/react-native-sdk.git', :tag => "v#{s.version}" }
+  s.source                 = { :http => "https://github.com/freezy7/react-native-sdk/releases/download/v#{s.version}/React-CoreModules.zip" }
   s.compiler_flags         = folly_compiler_flags + ' -Wno-nullability-completeness'
   s.source_files           = "#{source_path}/**/*.{c,m,mm,cpp}"
   s.header_dir             = "CoreModules"
