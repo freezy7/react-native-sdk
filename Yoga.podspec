@@ -28,6 +28,8 @@ Pod::Spec.new do |spec|
       'DEFINES_MODULE' => 'YES'
   }
 
+  spec.user_target_xcconfig = { "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)\"" }
+
   spec.compiler_flags = [
       '-fno-omit-frame-pointer',
       '-fexceptions',
@@ -41,7 +43,7 @@ Pod::Spec.new do |spec|
   # E.g. when publishing this spec to a spec repo.
   source_files = "#{source_path}/yoga/**/*.{cpp,h}"
   spec.source_files = source_files
-  spec.header_mappings_dir = 'yoga'
+  spec.header_mappings_dir = 'node_modules/react-native/ReactCommon/yoga/yoga'
 
   public_header_files = "#{source_path}/yoga/*.h"
   spec.public_header_files = public_header_files

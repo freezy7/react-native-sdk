@@ -33,11 +33,11 @@ Pod::Spec.new do |s|
   s.exclude_files          = "#{source_path}/tests"
   s.pod_target_xcconfig    = {
     "CLANG_CXX_LANGUAGE_STANDARD" => "c++20",
-    "HEADER_SEARCH_PATHS" => header_search_paths.join(' '),
-    "DEFINES_MODULE" => "YES"
+    "HEADER_SEARCH_PATHS" => header_search_paths.join(' ')
   }
 
   s.dependency "RCT-Folly", folly_version
+  s.dependency "RCT-Folly/Fabric", folly_version
   s.dependency "DoubleConversion"
   s.dependency "fmt", "9.1.0"
   s.dependency "React-debug"

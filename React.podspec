@@ -8,6 +8,8 @@ folly_compiler_flags = '-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 
 folly_version = '2024.01.01.00'
 boost_compiler_flags = '-Wno-documentation'
 
+source_path = 'node_modules/react-native/ReactCommon'
+
 Pod::Spec.new do |s|
   s.name                   = "React"
   s.version                = version
@@ -29,14 +31,15 @@ Pod::Spec.new do |s|
   s.license                = "MIT"
   s.author                 = "Meta Platforms, Inc. and its affiliates"
   s.platforms              = { :ios => '13.4' }
-  s.source                 = { :git => 'https://github.com/freezy7/react-native-sdk.git', :tag => "v#{s.version}" }
+  s.source                 = { :http => "https://github.com/freezy7/react-native-sdk/releases/download/v#{s.version}/React-rncore.zip" }
+  s.source_files           = "#{source_path}/dummyFile.cpp"
   
   s.cocoapods_version      = ">= 1.10.1"
 
   s.dependency "React-Core", version
   s.dependency "React-Core/DevSupport", version
   s.dependency "React-Core/RCTWebSocket", version
-  s.dependency "React-RCTActionSheet", version
+  # s.dependency "React-RCTActionSheet", version
   s.dependency "React-RCTAnimation", version
   s.dependency "React-RCTBlob", version
   s.dependency "React-RCTImage", version

@@ -24,7 +24,6 @@ Pod::Spec.new do |s|
   s.compiler_flags         = folly_compiler_flags + ' ' + boost_compiler_flags
   s.pod_target_xcconfig    = { "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/boost\" \"$(PODS_ROOT)/RCT-Folly\" \"$(PODS_ROOT)/DoubleConversion\" \"$(PODS_ROOT)/fmt/include\" \"$(PODS_ROOT)/Headers/Private/React-Core\"",
                                "USE_HEADERMAP" => "YES",
-                               "DEFINES_MODULE" => "YES",
                                "CLANG_CXX_LANGUAGE_STANDARD" => "c++20",
                                "GCC_WARN_PEDANTIC" => "YES" }
 
@@ -47,15 +46,16 @@ Pod::Spec.new do |s|
       sss.source_files         = "#{source_path}/react/bridging/**/*.{cpp,h}"
       sss.exclude_files        = "#{source_path}/react/bridging/tests"
       sss.header_dir           = "react/bridging"
-      sss.pod_target_xcconfig  = { "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/ReactCommon\" \"$(PODS_ROOT)/RCT-Folly\"" }
+      sss.pod_target_xcconfig  = { "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/ReactCommon/#{source_path}\" \"$(PODS_ROOT)/RCT-Folly\"" }
       sss.dependency "hermes-engine"
     end
 
     ss.subspec "core" do |sss|
       sss.source_files = "#{source_path}/react/nativemodule/core/ReactCommon/**/*.{cpp,h}"
-      sss.pod_target_xcconfig  = { "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/ReactCommon\" \"$(PODS_CONFIGURATION_BUILD_DIR)/React-debug/React_debug.framework/Headers\" \"$(PODS_CONFIGURATION_BUILD_DIR)/React-utils/React_utils.framework/Headers\"" }
+      sss.pod_target_xcconfig  = { "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/ReactCommon/#{source_path}\" \"$(PODS_CONFIGURATION_BUILD_DIR)/React-debug/React_debug.framework/Headers\" \"$(PODS_CONFIGURATION_BUILD_DIR)/React-utils/React_utils.framework/Headers\"" }
       sss.dependency "React-debug", version
       sss.dependency "React-utils", version
+      sss.dependency "ReactCommon/turbomodule/bridging"
     end
   end
 end

@@ -22,11 +22,14 @@ Pod::Spec.new do |spec|
                   }
 
   spec.ios.vendored_frameworks = "destroot/Library/Frameworks/universal/hermes.xcframework"
+  spec.preserve_paths = ["destroot/bin/*"].concat(["**/*.{h,c,cpp}"])
+  spec.source_files = "destroot/include/hermes/**/*.h"
+  spec.header_mappings_dir = "destroot/include"
 
-  spec.subspec 'Pre-built' do |ss|
-      ss.preserve_paths = ["destroot/bin/*"].concat(["**/*.{h,c,cpp}"])
-      ss.source_files = "destroot/include/hermes/**/*.h"
-      ss.header_mappings_dir = "destroot/include"
-      ss.ios.vendored_frameworks = "destroot/Library/Frameworks/universal/hermes.xcframework"
-    end
+  # spec.subspec 'Pre-built' do |ss|
+  #     ss.preserve_paths = ["destroot/bin/*"].concat(["**/*.{h,c,cpp}"])
+  #     ss.source_files = "destroot/include/hermes/**/*.h"
+  #     ss.header_mappings_dir = "destroot/include"
+  #     ss.ios.vendored_frameworks = "destroot/Library/Frameworks/universal/hermes.xcframework"
+  # end
 end

@@ -11,9 +11,12 @@ boost_compiler_flags = '-Wno-documentation'
 source_path = 'node_modules/react-native/ReactCommon/react/renderer/graphics'
 
 Pod::Spec.new do |s|
-  source_files = "#{source_path}/**/*.{m,mm,cpp,h}"
+  source_files = "#{source_path}/**/*.{m,mm,cpp,h}", "node_modules/react-native/ReactCommon/react/renderer/core/*.h"
+  public_header_files = "#{source_path}/**/*.h"
+  private_header_files = "node_modules/react-native/ReactCommon/react/renderer/core/*.h"
   header_search_paths = [
     "\"$(PODS_ROOT)/boost\"",
+    "\"$(PODS_ROOT)/React-graphics/node_modules/react-native/ReactCommon\"",
     "\"$(PODS_ROOT)/ReactCommon\"",
     "\"$(PODS_ROOT)/RCT-Folly\"",
     "\"$(PODS_ROOT)/DoubleConversion\"",
@@ -30,6 +33,8 @@ Pod::Spec.new do |s|
   s.source                 = { :http => "https://github.com/freezy7/react-native-sdk/releases/download/v#{s.version}/React-graphics.zip" }
   s.compiler_flags         = folly_compiler_flags + ' ' + boost_compiler_flags
   s.source_files           = source_files
+  s.public_header_files    = public_header_files
+  s.private_header_files   = private_header_files
   s.exclude_files          = "#{source_path}/tests",
                              "#{source_path}/platform/android",
                              "#{source_path}/platform/cxx",
@@ -38,7 +43,6 @@ Pod::Spec.new do |s|
 
   s.pod_target_xcconfig  = { "USE_HEADERMAP" => "NO",
                              "HEADER_SEARCH_PATHS" => header_search_paths.join(" "),
-                             "DEFINES_MODULE" => "YES",
                              "CLANG_CXX_LANGUAGE_STANDARD" => "c++20" }
 
   s.dependency "glog"

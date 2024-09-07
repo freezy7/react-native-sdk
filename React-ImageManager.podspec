@@ -8,7 +8,7 @@ folly_version = '2024.01.01.00'
 folly_compiler_flags = '-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -DFOLLY_HAVE_CLOCK_GETTIME=1 -Wno-comma -Wno-shorten-64-to-32'
 boost_compiler_flags = '-Wno-documentation'
 
-source_path = 'ReactCommon/react/renderer/imagemanager/platform/ios'
+source_path = 'node_modules/react-native/ReactCommon/react/renderer/imagemanager/platform/ios'
 
 Pod::Spec.new do |s|
   source_files = "#{source_path}/**/*.{m,mm,cpp,h}"
@@ -42,12 +42,12 @@ Pod::Spec.new do |s|
   s.pod_target_xcconfig  = {
     "USE_HEADERMAP" => "NO",
     "HEADER_SEARCH_PATHS" => header_search_paths,
-    "CLANG_CXX_LANGUAGE_STANDARD" => "c++20",
-    "DEFINES_MODULE" => "YES",
+    "CLANG_CXX_LANGUAGE_STANDARD" => "c++20"
   }
 
   s.dependency "RCT-Folly/Fabric"
   s.dependency "React-Core/Default"
+  s.dependency "React-Core/RCTImageHeaders"
   s.dependency "glog"
 
   s.dependency "React-Fabric"

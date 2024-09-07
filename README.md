@@ -48,6 +48,8 @@ react native sdk
 
 ### RCTDeprecation
 
+### React-hermes
+
 ### React-Core
 
 ### RCTRequired
@@ -59,8 +61,16 @@ react native sdk
 ### React-NativeModulesApple
 
 ### React-graphics
+和 React-Fabric 相互依赖
+
+### React-nativeconfig
+
+### React-RCTText
 
 ### React-Fabric
+和 React-graphics 相互依赖
+
+### React-ImageManager
 
 ### React-FabricImage
 
@@ -70,21 +80,19 @@ react native sdk
 
 ### React-RCTImage
 
+### React-RCTBlob
+
 ### React-CoreModules
-
-### React-hermes
-
-### React-ImageManager
 
 ### React-Mapbuffer
 
 ### React-jserrorhandler
 
-### React-jsitracing
-
-### React-nativeconfig
+### React-jsitracing 
+可能不再使用，需要进行查证
 
 ### React-RCTActionSheet
+可能不再使用，需要进行查证
 
 ### React-RCTAnimation
 
@@ -94,19 +102,18 @@ react native sdk
 
 ### React-RuntimeHermes
 
-### React-RCTAppDelegate
-
 ### React-RCTLinking
 
 ### React-RCTSettings
 
-### React-RCTText
-
 ### React-RCTVibration
 音频管理
 
-### React-RCTVibration
-
 ### React-rncore
+空包，用处待查证
+
+### React-RuntimeApple
+
+### React-RCTAppDelegate
 
 ### React

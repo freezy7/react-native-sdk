@@ -5,7 +5,7 @@
 
 header_subspecs = {
   'CoreModulesHeaders'          => 'node_modules/react-native/React/CoreModules/**/*.h',
-  'RCTActionSheetHeaders'       => 'node_modules/react-native/Libraries/ActionSheetIOS/*.h',
+  # 'RCTActionSheetHeaders'       => 'node_modules/react-native/Libraries/ActionSheetIOS/*.h', // 没有数据
   'RCTAnimationHeaders'         => 'node_modules/react-native/Libraries/NativeAnimation/{Drivers/*,Nodes/*,*}.{h}',
   'RCTBlobHeaders'              => 'node_modules/react-native/Libraries/Blob/{RCTBlobManager,RCTFileReaderModule}.h',
   'RCTImageHeaders'             => 'node_modules/react-native/Libraries/Image/*.h',
@@ -18,6 +18,7 @@ header_subspecs = {
 }
 
 header_search_paths = [
+  "$(PODS_ROOT)/React-Core/node_modules/react-native/React/CoreModules",
   "$(PODS_ROOT)/ReactCommon",
   "$(PODS_ROOT)/boost",
   "$(PODS_ROOT)/DoubleConversion",
@@ -51,7 +52,6 @@ Pod::Spec.new do |s|
   s.framework              = "JavaScriptCore"
   s.pod_target_xcconfig    = {
                                "HEADER_SEARCH_PATHS" => header_search_paths,
-                               "DEFINES_MODULE" => "YES",
                                "GCC_PREPROCESSOR_DEFINITIONS" => "RCT_METRO_PORT=${RCT_METRO_PORT}",
                                "CLANG_CXX_LANGUAGE_STANDARD" => "c++20",
                                "FRAMEWORK_SEARCH_PATHS" => "\"$(PODS_CONFIGURATION_BUILD_DIR)/React-hermes\""
@@ -62,14 +62,15 @@ Pod::Spec.new do |s|
   s.subspec "Default" do |ss|
     ss.source_files           = "#{source_path}/React/**/*.{c,h,m,mm,S,cpp}"
     exclude_files = [
-      "#{source_path}/React/CoreModules/**/*",
-      "#{source_path}/React/DevSupport/**/*",
+      "#{source_path}/React/CoreModules/**/*.{mm,m}",
+      "#{source_path}/React/DevSupport/**/*.{mm,m}",
       "#{source_path}/React/Fabric/**/*",
       "#{source_path}/React/FBReactNativeSpec/**/*",
       "#{source_path}/React/Tests/**/*",
       "#{source_path}/React/Inspector/**/*",
       "#{source_path}/React/CxxBridge/JSCExecutorFactory.{h,mm}"
     ]
+    ss.exclude_files = exclude_files
     ss.private_header_files   = "#{source_path}/React/Cxx*/*.h"
   end
 

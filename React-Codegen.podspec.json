@@ -7,7 +7,7 @@
     "authors": "Facebook",
     "compiler_flags": "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -DFOLLY_HAVE_CLOCK_GETTIME=1 -Wno-comma -Wno-shorten-64-to-32 -Wno-documentation -Wno-nullability-completeness -std=c++20",
     "source": {
-        "http": "https://github.com/freezy7/react-native-sdk/releases/download/v0.74.5/React-Codegen.zip",
+        "http": "https://github.com/freezy7/react-native-sdk/releases/download/v0.74.5/React-Codegen.zip"
     },
     "header_mappings_dir": "generated/ios/",
     "platforms": {

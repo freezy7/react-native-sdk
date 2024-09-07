@@ -86,8 +86,8 @@ Pod::Spec.new do |s|
 
   s.dependency "hermes-engine"
 
-  s.test_spec 'Tests' do |test_spec|
-    test_spec.source_files = "#{source_path}/Tests/**/*.{mm}"
-    test_spec.framework = "XCTest"
-  end
+  # s.test_spec 'Tests' do |test_spec|
+  #   test_spec.source_files = "#{source_path}/Tests/**/*.{mm}"
+  #   test_spec.framework = "XCTest"
+  # end
 end

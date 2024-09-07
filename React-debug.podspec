@@ -22,7 +22,6 @@ Pod::Spec.new do |s|
   s.source_files           = "#{source_path}/**/*.{cpp,h}"
   s.header_dir             = "react/debug"
   s.libraries = "c++"
-  s.pod_target_xcconfig    = { "CLANG_CXX_LANGUAGE_STANDARD" => "c++20",
-                               "DEFINES_MODULE" => "YES" }
+  s.pod_target_xcconfig    = { "CLANG_CXX_LANGUAGE_STANDARD" => "c++20" }
 
 end
