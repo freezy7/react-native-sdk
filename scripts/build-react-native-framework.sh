@@ -199,6 +199,7 @@ for configuration in "${configurations[@]}"; do
 
         rm -rf "$target_xcframework" "$archive"
         ditto "$source_xcframework" "$target_xcframework"
+        python3 "$script_dir/normalize-xcframework-symlinks.py" "$target_xcframework"
         verify_xcframework "$target_xcframework"
         ditto -c -k --sequesterRsrc --keepParent "$target_xcframework" "$archive"
         checksum="$(swift package compute-checksum "$archive")"
