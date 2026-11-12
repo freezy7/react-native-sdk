@@ -176,3 +176,11 @@ RN 升级不能只修改 `react-native` 一个版本或只重新打主 framework
 10. 使用新 GitHub tag 发布，绝不覆盖旧 tag 的同名 assets。更新 `Package.swift` URL/checksum 后再由 ZipReader 升级依赖。
 
 升级记录建议在 `docs/upgrades/<旧版本>-to-<新版本>.md` 中保存，至少包括版本矩阵、模板差异、已知问题、产物 checksum 和消费工程验证结果。这样下一次升级不需要重新逆向当时的操作。
+
+## 10. XCFramework 符号链接检查
+
+打包脚本在复制产物后调用 `scripts/normalize-xcframework-symlinks.py`，将指向同名 XCFramework 内部的绝对链接改为相对链接，并拒绝越界或悬空链接。只修改分发副本，不改 Pods 原始产物。
+
+0.84.1 的 Release Hermes 原包中，Mac Catalyst 的 `Resources`、`hermesvm` 和 `Versions/Current` 含有构建机绝对路径。按维护者要求，修复包替换原名称 `hermesvm.xcframework.zip`，清单同步更新 checksum。已缓存旧包的使用方需要重置包缓存并更新依赖。只有三个链接内容改变，其他文件内容与原包一致。
+
+Debug 原包 `hermesvm_debug.xcframework.zip` 同样包含这三个绝对链接，已按相同方式修复并同步 debug 分支 checksum。

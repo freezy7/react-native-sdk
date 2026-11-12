@@ -19,7 +19,7 @@ let package = Package(
     .binaryTarget(
         name: "hermesvm",
         url: "https://github.com/freezy7/react-native-sdk/releases/download/0.84.1/hermesvm_debug.xcframework.zip",
-        checksum: "ef13f1d35dd24a48e4ed07f0ed9e9f8b2736fcbf98ca4aa5bb64857360cd392e"
+        checksum: "42771cc8fb5318c436e06a6bb7167b62ca32ae99cc68c93209e1a0c5fbb86a26"
     ),
     .binaryTarget(
         name: "ReactBrownfield",
