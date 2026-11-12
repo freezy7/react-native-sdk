@@ -18,7 +18,7 @@ let package = Package(
     ),
     .binaryTarget(
         name: "hermesvm",
-        url: "https://github.com/freezy7/react-native-sdk/releases/download/0.84.1/hermesvm.xcframework.zip",
+        url: "https://github.com/freezy7/react-native-sdk/releases/download/0.84.1/hermesvm.xcframework.zip?revision=symlinks-fixed-1",
         checksum: "ec3b389ad42da81ac7073ac3608183b882f38c96cc6b2337a39ffd629c2ab261"
     ),
     .binaryTarget(
