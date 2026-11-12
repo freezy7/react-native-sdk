@@ -184,3 +184,5 @@ RN 升级不能只修改 `react-native` 一个版本或只重新打主 framework
 0.84.1 的 Release Hermes 原包中，Mac Catalyst 的 `Resources`、`hermesvm` 和 `Versions/Current` 含有构建机绝对路径。按维护者要求，修复包替换原名称 `hermesvm.xcframework.zip`，清单同步更新 checksum。已缓存旧包的使用方需要重置包缓存并更新依赖。只有三个链接内容改变，其他文件内容与原包一致。
 
 Debug 原包 `hermesvm_debug.xcframework.zip` 同样包含这三个绝对链接，已按相同方式修复并同步 debug 分支 checksum。
+
+同名 asset 修复后，SwiftPM 仍可能从按 URL 保存的缓存中读取旧包。Hermes URL 添加 `?revision=symlinks-fixed-1` 修订参数，保持文件名不变，并使用新缓存键；checksum 仍校验完整修复包。
